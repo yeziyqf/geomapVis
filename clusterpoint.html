@@ -60,7 +60,7 @@
   L.esri.basemapLayer('Streets').addTo(map);
 
   //  (new constructor syntax at 2.0.0)
-  L.esri.Cluster.featureLayer({
+  var trees = L.esri.Cluster.featureLayer({
     url: 'https://services.arcgis.com/rOo16HdIMeOBI4Mb/arcgis/rest/services/Trimet_Transit_Stops/FeatureServer/0'
   }).addTo(map);
 
@@ -111,6 +111,15 @@
     
     // create marker object, pass custom icon as option, pass content and options to popup, add to map
     L.marker([45.526, -122.667], {icon: photoIcon}).bindPopup(customPopup,customOptions).addTo(map);
+
+  //   trees.bindPopup(function (layer) {
+  //   return L.Util.template('<p>{COMMON_NAM}<br>{SCIENTIFIC}<br>{NOTES}</p>', layer.feature.properties);
+  // });
+
+    // trees.bindPopup(function (layer) {
+    //     return L.Util.template('<p>{COMMON_NAM}<br>{SCIENTIFIC}<br>{NOTES}</p>', layer.feature.properties);
+    // });
+    trees.bindPopup(customPopup,customOptions);
 
 </script>
 
