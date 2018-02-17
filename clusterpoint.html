@@ -77,19 +77,20 @@
 //  [45.52, -122]
 // ]).addTo(map).bindPopup("故宫");　
 
-
+/*
+  //Show popups on map
   var popup = L.popup();
 
-  var photoImg = '<img src="https://unpkg.com/leaflet@1.3.1/dist/images/marker-icon.png" height="150px" maxWidth: "auto"/>';
+  var photoImg = '<img src="https://firebasestorage.googleapis.com/v0/b/geomapvis.appspot.com/o/1.png?alt=media&token=e7836e50-a6bd-40db-89d0-d4e7b73919a0" height="150px" maxWidth: "auto"/>';
 
-  //Show popups on map
-  // function onMapClick(e) {
-  //     popup
-  //         .setLatLng(e.latlng)
-  //         .setContent("<center>My Photo </center>" + "</br>"+ photoImg)
-  //         .openOn(map);
-  // }
-  // map.on('click', onMapClick);
+  function onMapClick(e) {
+      popup
+          .setLatLng(e.latlng)
+          .setContent("<center>My Photo </center>" + "</br>"+ photoImg)
+          .openOn(map);
+  }
+  map.on('click', onMapClick);
+*/
 
     //Another option
     var photoIcon = L.icon({
@@ -98,13 +99,13 @@
         popupAnchor: [0,-15]
     });
     // create popup contents
-    var customPopup = "Local images<br/><img src='http://www.go-study.com.tw/upload/citytown/201702061554071.png' 'width': '50','height': '50'/>";
-    
+    var customPopup = "Local images<br/><img src='https://firebasestorage.googleapis.com/v0/b/geomapvis.appspot.com/o/1.png?alt=media&token=e7836e50-a6bd-40db-89d0-d4e7b73919a0' 'width': '50','height': '50'/>";
+
     // specify popup options 
     var customOptions =
         {
-        'maxWidth': '50',
-        'maxHeight': '50',
+        // 'maxWidth': '50',
+        // 'maxHeight': '50',
         'className' : 'custom'
         }
     
