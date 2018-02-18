@@ -1,7 +1,15 @@
 # geomapVis
 **Author: Qiaofei Ye**
 
-An geograpical map with visualization of local images.
+**interactive map demo url:**<br>
+https://geomapvis.herokuapp.com/index.php
+
+**Complete Website demo url:**<br>
+https://geomapvis.herokuapp.com/Bocor/Bocor/index.html
+
+
+**Description**<br>
+A geograpical map with visualization of local images.
 
 Providing visualization sercices for clustering local photo updates based on geographical location.
 
@@ -12,10 +20,11 @@ After clicking on the node, there will be a pop-up window showing the images tha
 Images used in this demo was crawled from flicker website.
 
 
+
 ##Technical Franmework
 
 - leaflet v1.3.1
-- //bootstrap
+- bootstrap
 - Firebase
 
 
