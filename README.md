@@ -11,7 +11,7 @@ https://geomapvis.herokuapp.com/Bocor/Bocor/index.html
 **Description**<br>
 A geograpical map with visualization of local images.
 
-Providing visualization sercices for clustering local photo updates based on geographical location.
+Providing visualization services for clustering local photo updates based on geographical location.
 
 Every node shows how many subnodes are in this area, with click on the node, it will expand to a more detailed node allocation of the photo updates.
 

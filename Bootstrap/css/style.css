@@ -167,6 +167,15 @@ blockquote strong {
 	margin-top: 20px;
 }
 
+.site-logo a.brand_new {
+	color: #111;
+	text-transform: uppercase;
+	font-size: 28px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 900;
+	margin-top: 20px;
+}
+
 
 /* ------- Navigation ------------ */
 #navigation {
