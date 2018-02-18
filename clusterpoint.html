@@ -99,7 +99,53 @@
         popupAnchor: [0,-15]
     });
     // create popup contents
-    var customPopup = "Local images<br/><img src='https://firebasestorage.googleapis.com/v0/b/geomapvis.appspot.com/o/1.png?alt=media&token=e7836e50-a6bd-40db-89d0-d4e7b73919a0' 'width': '50','height': '50'/>";
+    var imgsource = 'https://firebasestorage.googleapis.com/v0/b/geomapvis.appspot.com/o/1.png?alt=media&token=e7836e50-a6bd-40db-89d0-d4e7b73919a0';
+    // var customPopup = new Array(15);
+
+    function randomImg() {
+        var r = getRandomIntInclusive();
+        switch(r) {
+          case 0:
+              return customPopup0;
+              break;
+          case 1:
+              return customPopup1;
+              break;
+          case 2:
+              return customPopup2;
+              break;
+          case 3:
+              return customPopup3;
+              break;
+          case 4:
+              return customPopup4;
+              break;
+          case 5:
+              return customPopup5;
+              break;
+          default:
+              return customPopup6;
+        }
+        // return imgSuffixes[r]
+    }
+
+    function getRandomIntInclusive() {
+      var min = 0, max =9;
+      var result = Math.floor(Math.random() * (max - min + 1)) + min;
+      console.log(result);
+      return result;
+    }
+
+    var customPopup0 = "Local images<br/><img src='https://firebasestorage.googleapis.com/v0/b/geomapvis.appspot.com/o/1.png?alt=media&token=e7836e50-a6bd-40db-89d0-d4e7b73919a0' 'width': '50','height': '50'/>";
+    var customPopup1 = "Local images<br/><img src='https://firebasestorage.googleapis.com/v0/b/geomapvis.appspot.com/o/2.png?alt=media&token=4013c584-2555-49f0-bacf-aa7d5d62f1bd' 'width': '50','height': '50'/>";
+    var customPopup2 = "Local images<br/><img src='https://firebasestorage.googleapis.com/v0/b/geomapvis.appspot.com/o/3.png?alt=media&token=9341ea02-1038-4d67-b87d-0d8a12238ff2' 'width': '50','height': '50'/>";
+    var customPopup3 = "Local images<br/><img src='https://firebasestorage.googleapis.com/v0/b/geomapvis.appspot.com/o/4.png?alt=media&token=9276e25a-d6d0-4598-bbbf-69317706c46c' 'width': '50','height': '50'/>";
+    var customPopup4 = "Local images<br/><img src='https://firebasestorage.googleapis.com/v0/b/geomapvis.appspot.com/o/5.png?alt=media&token=d881d777-970d-4f72-8472-4b8bcc1e23a4' 'width': '50','height': '50'/>";
+    var customPopup5 = "Local images<br/><img src='https://firebasestorage.googleapis.com/v0/b/geomapvis.appspot.com/o/6.png?alt=media&token=bf8acb77-9f55-4320-b826-0243726bc92c' 'width': '50','height': '50'/>";
+    var customPopup6 = "Local images<br/><img src='https://firebasestorage.googleapis.com/v0/b/geomapvis.appspot.com/o/7.png?alt=media&token=7de8848c-9c88-4f85-a747-4e050e13d718' 'width': '50','height': '50'/>";
+    var customPopup7 = "Local images<br/><img src='https://firebasestorage.googleapis.com/v0/b/geomapvis.appspot.com/o/8.png?alt=media&token=a4b82c4b-418b-4934-97be-62695d8e0e70' 'width': '50','height': '50'/>";
+    var customPopup8 = "Local images<br/><img src='https://firebasestorage.googleapis.com/v0/b/geomapvis.appspot.com/o/9.png?alt=media&token=679a468f-5fd2-4489-ab8f-7983932c934b' 'width': '50','height': '50'/>";
+
 
     // specify popup options 
     var customOptions =
@@ -110,7 +156,7 @@
         }
     
     // create marker object, pass custom icon as option, pass content and options to popup, add to map
-    L.marker([45.526, -122.667], {icon: photoIcon}).bindPopup(customPopup,customOptions).addTo(map);
+    L.marker([45.526, -122.667], {icon: photoIcon}).bindPopup(randomImg(),customOptions).addTo(map);
 
   //   trees.bindPopup(function (layer) {
   //   return L.Util.template('<p>{COMMON_NAM}<br>{SCIENTIFIC}<br>{NOTES}</p>', layer.feature.properties);
@@ -119,7 +165,13 @@
     // trees.bindPopup(function (layer) {
     //     return L.Util.template('<p>{COMMON_NAM}<br>{SCIENTIFIC}<br>{NOTES}</p>', layer.feature.properties);
     // });
-    trees.bindPopup(customPopup,customOptions);
+    trees.bindPopup(randomImg(),customOptions);
+    function onMapClick(e) {
+        // randomImg();
+        trees.bindPopup(randomImg(),customOptions);
+    }
+    map.on('click', onMapClick);
+    trees.on('click', onMapClick);
 
 </script>
 
